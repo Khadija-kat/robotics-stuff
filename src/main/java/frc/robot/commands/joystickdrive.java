@@ -33,16 +33,16 @@ public class joystickdrive extends CommandBase {
     
     if((throttle>0 && throttle<0.25) || (throttle<0 && throttle>-0.25)) {
       throttle=0; }
-      else {throttle=0.25*throttle;}
+      else {throttle=0.35*throttle;}
     if ((rotate>0 && rotate<0.25) || (rotate<0 && rotate>-0.25)) {
       rotate=0;
     }
-    rotate= 0.25*rotate;
+    rotate= 0.35*rotate;
 
 
     // pass back throttle and rotate to driveSubsystem
     // call drive method in driveSubsystem, throttle and rotate are parameters
-    driveSubsystem.drive(throttle, rotate);
+    driveSubsystem.drive(throttle, -rotate);
   }
 
   // Called once the command ends or is interrupted.
