@@ -3,7 +3,11 @@ package frc.robot;
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonFX;
 
 public class RobotMap {
+    public static final int INTAKE_MOTOR_PORT =5;
+
+    public static WPI_TalonFX intakeMotor = new WPI_TalonFX(INTAKE_MOTOR_PORT);
     
+
     public static final int Left_front_drive_port=3;
     public static final int Right_front_drive_port=4;
     public static final int Left_back_drive_port=1;
