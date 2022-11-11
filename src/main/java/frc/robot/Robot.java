@@ -4,7 +4,10 @@
 
 package frc.robot;
 
+import edu.wpi.first.cameraserver.CameraServer;
+import edu.wpi.first.cscore.UsbCamera;
 import edu.wpi.first.wpilibj.TimedRobot;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
 import frc.robot.subsystems.DriveSubsystem;
@@ -33,8 +36,10 @@ public class Robot extends TimedRobot {
     m_robotContainer = new RobotContainer();
     //m_robotContainer.driveSubsystem.setModePercentVoltage();
     m_robotContainer.driveSubsystem.resetEncoders();
-  
-
+    
+    UsbCamera camera = CameraServer.startAutomaticCapture();
+    camera.setResolution(240, 180);
+    camera.setFPS(8);
   }
 
   /**
@@ -51,6 +56,8 @@ public class Robot extends TimedRobot {
     // and running subsystem periodic() methods.  This must be called from the robot's periodic
     // block in order for anything in the Command-based framework to work.
     CommandScheduler.getInstance().run();
+
+    SmartDashboard.putNumber("Left Back Motor Encorder", driveSubsystem.getLeftBackEncoderPosition());
   }
 
   /** This function is called once each time the robot enters Disabled mode. */

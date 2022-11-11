@@ -30,6 +30,7 @@ public class DriveSubsystem extends SubsystemBase {
   private static final double Ticks_Per_Meter= ( Motor_Encoder_Codes_Per_Rev * Gear_Ratio)/(Wheel_Circumference);
   private static final double Meters_Per_Ticks= 1/Ticks_Per_Meter;
   /** Creates a new DriveSubsystem. */
+  
   public void setModePercentVoltage(){
     leftFrontMotor.set(ControlMode.PercentOutput, 0);
     rightFrontMotor.set(ControlMode.PercentOutput, 0);
