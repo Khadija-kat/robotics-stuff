@@ -23,8 +23,13 @@ public class LimelightSubsystem extends SubsystemBase {
     limelightTable.getEntry("camMode").setNumber(1);
   }
 
-  public static void getLimelightX(){
-    
+  public static void getLimelightData(){
+    limelight_x = (double) limelightTable.getEntry("tx").getDouble(0.0);
+    limelight_y = (double) limelightTable.getEntry("ty").getDouble(0.0);
+
+  }
+  public static double getLimelightX(){
+    return (double) limelightTable.getEntry("ty").getDouble(0.0);
   }
 
 
