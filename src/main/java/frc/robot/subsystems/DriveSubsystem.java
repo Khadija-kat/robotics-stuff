@@ -16,10 +16,10 @@ import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.RobotMap;
 public class DriveSubsystem extends SubsystemBase {
-  private static final WPI_TalonFX leftFrontMotor= RobotMap.leftFrontDrivePort;
-  private static final WPI_TalonFX rightFrontMotor= RobotMap.rightFrontDrivePort;
-  private static final WPI_TalonFX leftBackMotor= RobotMap.leftBackDrivePort;
-  private static final WPI_TalonFX rightBackMotor= RobotMap.rightBackDrivePort;
+  private static final WPI_TalonFX leftFrontMotor= RobotMap.frontLeftMotor;
+  private static final WPI_TalonFX rightFrontMotor= RobotMap.frontRightMotor;
+  private static final WPI_TalonFX leftBackMotor= RobotMap.backLeftMotor;
+  private static final WPI_TalonFX rightBackMotor= RobotMap.backRightMotor;
 
   private static final double In_To_M=.0254;
   private static final int Motor_Encoder_Codes_Per_Rev=2048;
